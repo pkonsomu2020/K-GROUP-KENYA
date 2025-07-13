@@ -12,7 +12,13 @@ const PORT = 4000;
 const __dirname = path.resolve();
 
 // Middleware
-app.use(cors());
+app.use(cors({
+  origin: [
+    'https://kgroupkenya.netlify.app',
+    'http://localhost:5173' // allow local dev
+  ],
+  credentials: true
+}));
 app.use(express.json());
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
