@@ -1,0 +1,95 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    --background: 0 0% 98%;
+    --foreground: 0 0% 5%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 5%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 5%;
+    --primary: 0 0% 5%; /* brand-black */
+    --primary-foreground: 0 0% 98%;
+    --primary-glow: 0 0% 15%;
+    --secondary: 0 100% 22%; /* brand-red */
+    --secondary-foreground: 0 0% 98%;
+    --muted: 0 0% 96%;
+    --muted-foreground: 0 0% 46%;
+    --accent: 0 100% 22%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 0 0% 91%;
+    --input: 0 0% 91%;
+    --ring: 0 100% 22%;
+    --radius: 0.75rem;
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 0 0% 5%;
+    --sidebar-primary: 0 0% 5%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 0 0% 98%;
+    --sidebar-accent-foreground: 0 0% 5%;
+    --sidebar-border: 0 0% 91%;
+    --sidebar-ring: 0 100% 22%;
+  }
+  .dark {
+    --background: 0 0% 8%;
+    --foreground: 0 0% 5%;
+    --card: 0 0% 12%;
+    --card-foreground: 0 0% 5%;
+    --popover: 0 0% 12%;
+    --popover-foreground: 0 0% 5%;
+    --primary: 0 0% 98%;
+    --primary-foreground: 0 0% 8%;
+    --primary-glow: 0 0% 30%;
+    --secondary: 0 100% 22%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 0 0% 18%;
+    --muted-foreground: 0 0% 5%;
+    --accent: 0 100% 22%;
+    --accent-foreground: 0 0% 5%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 5%;
+    --border: 0 0% 20%;
+    --input: 0 0% 20%;
+    --ring: 0 100% 22%;
+    --radius: 0.75rem;
+    --sidebar-background: 0 0% 8%;
+    --sidebar-foreground: 0 0% 5%;
+    --sidebar-primary: 0 0% 98%;
+    --sidebar-primary-foreground: 0 0% 8%;
+    --sidebar-accent: 0 0% 8%;
+    --sidebar-accent-foreground: 0 0% 5%;
+    --sidebar-border: 0 0% 20%;
+    --sidebar-ring: 0 100% 22%;
+  }
+  body {
+    font-family: 'Inter', 'Open Sans', sans-serif;
+    @apply bg-white text-brand-black;
+  }
+}
+
+@layer components {
+  .brand-section-title {
+    @apply text-brand-red uppercase font-bold text-3xl mb-4 tracking-wide;
+    border-bottom: 3px solid #700401;
+    display: inline-block;
+    padding-bottom: 0.25em;
+    margin-bottom: 1.5em;
+  }
+  .brand-card {
+    @apply bg-white rounded-2xl shadow-md p-8;
+  }
+  .brand-btn {
+    @apply bg-brand-red text-white font-bold rounded-lg px-6 py-3 shadow hover:bg-brand-black transition;
+  }
+  .brand-btn-outline {
+    @apply border-2 border-brand-red text-brand-red bg-white font-bold rounded-lg px-6 py-3 hover:bg-brand-red hover:text-white transition;
+  }
+}
