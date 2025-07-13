@@ -22,9 +22,9 @@ const KachSoundMedia = () => (
         <div className="w-48 h-48 rounded-full bg-white border-4 border-brand-red flex items-center justify-center mx-auto mb-2 overflow-hidden">
           <img src={KachSoundLogo} alt="Kach Sound Media" className="w-40 h-40 object-contain" />
         </div>
-        <h1 className="text-6xl md:text-7xl font-extrabold text-black mb-2">Kach Sound Media</h1>
+        <h1 className="text-6xl md:text-7xl font-extrabold text-foreground mb-2">Kach Sound Media</h1>
         <span className="text-brand-red font-bold text-2xl mb-4 block">Sound that Moves, Beats that Inspire.</span>
-        <p className="text-xl md:text-2xl text-black max-w-4xl mx-auto mb-0 leading-relaxed">
+        <p className="text-xl md:text-2xl text-foreground max-w-4xl mx-auto mb-0 leading-relaxed">
           Entertainment heartbeat of K-GROUP KENYA, specializing in music production, DJ services, live sound setups, and event performances.
         </p>
       </div>

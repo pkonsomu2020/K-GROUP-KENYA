@@ -20,9 +20,9 @@ const KBRRadio = () => (
         <div className="w-48 h-48 rounded-full bg-white border-4 border-brand-red flex items-center justify-center mx-auto mb-2 overflow-hidden">
           <img src={KBRRadioLogo} alt="KBR Radio" className="w-40 h-40 object-contain" />
         </div>
-        <h1 className="text-6xl md:text-7xl font-extrabold text-black mb-2">KBR Radio</h1>
+        <h1 className="text-6xl md:text-7xl font-extrabold text-foreground mb-2">KBR Radio</h1>
         <span className="text-brand-red font-bold text-2xl mb-4 block">Voices that Resonate.</span>
-        <p className="text-xl md:text-2xl text-black max-w-4xl mx-auto mb-0 leading-relaxed">
+        <p className="text-xl md:text-2xl text-foreground max-w-4xl mx-auto mb-0 leading-relaxed">
           Community-first digital and FM station of K-GROUP KENYA, giving a voice to the voiceless with gospel, talk shows, live DJ sets, and local news.
         </p>
       </div>
@@ -33,10 +33,10 @@ const KBRRadio = () => (
       <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-12 items-center">
         <div>
           <h2 className="brand-section-title">About Us</h2>
-          <p className="text-brand-black mb-4 text-lg">
+          <p className="text-foreground mb-4 text-lg">
             KBR Radio is dedicated to interactive, community-driven programming. We promote local artists, changemakers, and build cohesion through media.
           </p>
-          <ul className="list-disc list-inside text-brand-black mb-4">
+          <ul className="list-disc list-inside text-foreground mb-4">
             <li>Gospel & Spiritual Shows</li>
             <li>Youth Talk Shows & Podcasts</li>
             <li>Live DJ Sets & Interviews</li>

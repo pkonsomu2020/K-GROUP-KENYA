@@ -27,7 +27,7 @@ import About from "./pages/About";
 
 const queryClient = new QueryClient();
 
-const WHATSAPP_NUMBER = "254712345678"; // Replace with your WhatsApp number
+const WHATSAPP_NUMBER = "254723157309"; // Updated WhatsApp number
 const WHATSAPP_MESSAGE = encodeURIComponent("Hello DJ KACH! I found your website and would like to connect.");
 
 const App = () => {

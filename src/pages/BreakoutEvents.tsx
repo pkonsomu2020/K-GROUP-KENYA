@@ -33,10 +33,10 @@ const BreakoutEvents = () => (
       <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-12 items-center">
         <div>
           <h2 className="brand-section-title">About Us</h2>
-          <p className="text-brand-black mb-4 text-lg">
+          <p className="text-foreground mb-4 text-lg">
             From product launches to weddings, Breakout Events brings ideas to life with bespoke concepts, end-to-end management, and access to in-house sound and media teams.
           </p>
-          <ul className="list-disc list-inside text-brand-black mb-4">
+          <ul className="list-disc list-inside text-foreground mb-4">
             <li>Corporate & Private Event Planning</li>
             <li>Stage, Lighting & Décor</li>
             <li>Live Sound and Artist Booking</li>

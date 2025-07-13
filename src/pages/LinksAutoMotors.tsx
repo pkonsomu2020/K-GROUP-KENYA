@@ -20,9 +20,9 @@ const LinksAutoMotors = () => (
         <div className="w-48 h-48 rounded-full bg-white border-4 border-brand-red flex items-center justify-center mx-auto mb-2 overflow-hidden">
           <img src={LinksAutoLogo} alt="Links Auto Motors" className="w-40 h-40 object-contain" />
         </div>
-        <h1 className="text-6xl md:text-7xl font-extrabold text-black mb-2">Links Auto Motors</h1>
+        <h1 className="text-6xl md:text-7xl font-extrabold text-foreground mb-2">Links Auto Motors</h1>
         <span className="text-brand-red font-bold text-2xl mb-4 block">Drive the Future with Confidence.</span>
-        <p className="text-xl md:text-2xl text-black max-w-4xl mx-auto mb-0 leading-relaxed">
+        <p className="text-xl md:text-2xl text-foreground max-w-4xl mx-auto mb-0 leading-relaxed">
           Automotive wing of K-GROUP KENYA, providing high-quality cars, trade-in, financing, and auto services for urban and rural mobility.
         </p>
       </div>

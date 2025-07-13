@@ -122,8 +122,8 @@ const Home = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {coreValues.map((value, idx) => (
               <div key={value.name} className="brand-card flex flex-col items-center text-center" data-aos="zoom-in" data-aos-delay={idx * 100}>
-                <span className="text-2xl font-bold text-secondary mb-2">{value.name}</span>
-                <span className="text-foreground">{value.desc}</span>
+                <span className="text-2xl font-bold text-black dark:text-black mb-2">{value.name}</span>
+                <span className="text-black dark:text-black">{value.desc}</span>
               </div>
             ))}
           </div>
@@ -138,9 +138,9 @@ const Home = () => {
             {subsidiaries.map((sub, idx) => (
               <div key={sub.name} className="brand-card flex flex-col items-center text-center" data-aos="zoom-in" data-aos-delay={idx * 100}>
                 <img src={sub.logo} alt={sub.name} className="w-20 h-20 object-contain rounded-full mb-4 border-2 border-brand-red" />
-                <h4 className="text-xl font-bold mb-2 text-foreground">{sub.name}</h4>
+                <h4 className="text-xl font-bold mb-2 text-black dark:text-black">{sub.name}</h4>
                 <span className="text-secondary font-semibold mb-2">{sub.tagline}</span>
-                <p className="text-foreground mb-4">{sub.overview}</p>
+                <p className="text-black dark:text-black mb-4">{sub.overview}</p>
                 <div className="flex gap-2 justify-center">
                   <a href={sub.link} className="brand-btn">Learn More</a>
                   <a href={sub.facebook} target="_blank" rel="noopener noreferrer" className="brand-btn-outline">Facebook</a>

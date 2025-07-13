@@ -1,73 +1,122 @@
-# Welcome to your Lovable project
+# K-GROUP KENYA Website
 
-## Project info
+A modern, full-stack web platform for K-GROUP KENYA, a multidisciplinary holding company with subsidiaries in media, automotive, events, education, and digital broadcasting.
 
-**URL**: https://lovable.dev/projects/09dd18ed-0495-4d8f-97ef-533de7520285
+---
 
-## How can I edit this code?
+## 🌟 Project Overview
 
-There are several ways of editing your application.
+K-GROUP KENYA brings together diverse ventures under one brand, each operating as an independent entity but sharing a commitment to quality, impact, and innovation. This site provides:
+- A dynamic homepage with hero, sectors, core values, and subsidiaries overview
+- Individual pages for each subsidiary (Kach Sound Media, Links Auto Motors, Breakout Events, KBR TV, KBR Radio, Breakout Bible Fellowship, KBR Academy)
+- About, Contact, Gallery, Events, Services, Audio/Video Mixes, and more
+- Modern navigation, dark/light mode, scroll animations, and WhatsApp integration
 
-**Use Lovable**
+---
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/09dd18ed-0495-4d8f-97ef-533de7520285) and start prompting.
+## 🚀 Live Demo
+- **Frontend (Netlify):** [https://kgroupkenya.netlify.app/](https://kgroupkenya.netlify.app/)
+- **Backend (Render):** [https://k-group-kenya-22.onrender.com/](https://k-group-kenya-22.onrender.com/)
 
-Changes made via Lovable will be committed automatically to this repo.
+---
 
-**Use your preferred IDE**
+## 🏗️ Tech Stack
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+### Frontend
+- Vite + React + TypeScript
+- Tailwind CSS (custom theming, dark mode)
+- shadcn/ui component library
+- AOS (Animate On Scroll)
+- React Router DOM
+- Query Client (TanStack React Query)
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+### Backend
+- Node.js + Express
+- MySQL (with connection pool)
+- Multer (file uploads)
+- CORS (Netlify/localhost allowed)
+- dotenv (env config)
 
-Follow these steps:
+---
 
+## 📁 Project Structure
+
+```
+DJ KACH/
+  backend/           # Node.js/Express backend (API, uploads, MySQL)
+  src/               # Frontend source (React, pages, components)
+  public/            # Static assets (logos, favicon, _redirects)
+  ...
+```
+
+---
+
+## ✨ Key Features
+- **Homepage:** Hero, sectors, core values, subsidiaries overview
+- **Subsidiary Pages:** Each with logo, banner, overview, services, Facebook link
+- **About Page:** Company story, vision, mission, leadership, timeline
+- **Contact Page:** Form (saves to backend), info, social links
+- **Gallery, Events, Services, Audio/Video Mixes:** Rich, interactive content
+- **Dark/Light Mode:** Toggle, persistent, fully themed
+- **WhatsApp Button:** Floating, direct chat to +254 723 157309
+- **Responsive Design:** Mobile-first, modern UI
+- **SPA Routing:** Netlify `_redirects` for client-side navigation
+
+---
+
+## ⚙️ Setup & Development
+
+### Prerequisites
+- Node.js (v18+ recommended)
+- npm or bun
+- MySQL (for backend)
+
+### Frontend
 ```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
+# Install dependencies
+npm install
+# Start dev server
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+### Backend
+```sh
+cd backend
+npm install
+# Create a .env file with your MySQL credentials
+cp .env.example .env
+# Start backend
+npm run dev
+```
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+### Environment Variables
+- **Frontend:**
+  - `VITE_API_URL` (e.g. your Render backend URL)
+- **Backend:**
+  - `MYSQL_HOST`, `MYSQL_USER`, `MYSQL_PASSWORD`, `MYSQL_DATABASE`
 
-**Use GitHub Codespaces**
+---
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+## 🛠️ Deployment
 
-## What technologies are used for this project?
+### Frontend
+- Deploy to Netlify. Ensure `public/_redirects` exists for SPA routing.
+- Set `VITE_API_URL` in Netlify environment variables.
 
-This project is built with:
+### Backend
+- Deploy to Render as a Web Service.
+- Set environment variables for MySQL.
+- CORS is configured for Netlify and localhost.
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+---
 
-## How can I deploy this project?
+## 🗺️ Navigation
+- Home
+- About
+- Subsidiaries (dropdown: Kach Sound Media, Links Auto Motors, Breakout Events, KBR TV, KBR Radio, Breakout Bible Fellowship, KBR Academy)
+- Events, Services, Audio Mixes, Video Mixes, Gallery, Contacts
 
-Simply open [Lovable](https://lovable.dev/projects/09dd18ed-0495-4d8f-97ef-533de7520285) and click on Share -> Publish.
+---
 
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+## 📝 License
+This project is for K-GROUP KENYA. All rights reserved.
