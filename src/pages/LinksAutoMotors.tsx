@@ -3,15 +3,22 @@ import Footer from "@/components/Footer";
 import LinksAutoLogo from "/COMPANY LOGOS/LINKSAUTOMOTORS.jpg";
 import heroImg from "/COMPANY LOGOS/LINKSAUTOMOTORS.jpg";
 import Banner from "@/components/Banner";
+import { ThemeProvider } from "@/components/ThemeProvider";
 
 const galleryImages = [
-  heroImg,
-  // Add more images as needed
+  "/GALLERY/links auto motors/links 1.jpg",
+  "/GALLERY/links auto motors/links 2.jpg",
+  "/GALLERY/links auto motors/links 3.jpg",
+  "/GALLERY/links auto motors/links 4.jpg",
+  "/GALLERY/links auto motors/links 5.jpg",
+  "/GALLERY/links auto motors/links 6.jpg"
 ];
 
 const LinksAutoMotors = () => (
   <div className="min-h-screen bg-background pt-16">
-    <Navigation />
+    <ThemeProvider>
+      <Navigation />
+    </ThemeProvider>
     {/* Hero Banner */}
     <section className="relative flex flex-col items-center justify-center text-center px-4 pt-8 pb-12 bg-brand-black overflow-hidden">
       <img src="/src/assets/dj-kach-hero.jpg" alt="Banner Background" className="absolute inset-0 w-full h-full object-cover opacity-30 z-0" />
@@ -20,9 +27,9 @@ const LinksAutoMotors = () => (
         <div className="w-48 h-48 rounded-full bg-white border-4 border-brand-red flex items-center justify-center mx-auto mb-2 overflow-hidden">
           <img src={LinksAutoLogo} alt="Links Auto Motors" className="w-40 h-40 object-contain" />
         </div>
-        <h1 className="text-6xl md:text-7xl font-extrabold text-foreground mb-2">Links Auto Motors</h1>
+        <h1 className="text-6xl md:text-7xl font-extrabold text-white mb-2">Links Auto Motors</h1>
         <span className="text-brand-red font-bold text-2xl mb-4 block">Drive the Future with Confidence.</span>
-        <p className="text-xl md:text-2xl text-foreground max-w-4xl mx-auto mb-0 leading-relaxed">
+        <p className="text-xl md:text-2xl text-white max-w-4xl mx-auto mb-0 leading-relaxed">
           Automotive wing of K-GROUP KENYA, providing high-quality cars, trade-in, financing, and auto services for urban and rural mobility.
         </p>
       </div>

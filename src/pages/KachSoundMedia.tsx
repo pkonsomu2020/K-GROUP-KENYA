@@ -3,16 +3,22 @@ import Footer from "@/components/Footer";
 import KachSoundLogo from "/COMPANY LOGOS/KACHSOUNDMEDIA.jpg";
 import heroImg from "/COMPANY LOGOS/KACHSOUNDMEDIA.jpg";
 import Banner from "@/components/Banner";
+import { ThemeProvider } from "@/components/ThemeProvider";
 
 const galleryImages = [
-  heroImg,
-  "/src/assets/dj-kach-hero.jpg",
-  // Add more images as needed
+  "/GALLERY/kachsound media/media 1.jpg",
+  "/GALLERY/kachsound media/media 2.jpg",
+  "/GALLERY/kachsound media/media 3.jpg",
+  "/GALLERY/kachsound media/media 4.jpg",
+  "/GALLERY/kachsound media/media 5.jpg",
+  "/GALLERY/kachsound media/media 6.jpg"
 ];
 
 const KachSoundMedia = () => (
   <div className="min-h-screen bg-background pt-16">
-    <Navigation />
+    <ThemeProvider>
+      <Navigation />
+    </ThemeProvider>
     {/* Hero Banner - match screenshot */}
     <section className="relative flex flex-col items-center justify-center text-center px-4 pt-8 pb-12 bg-brand-black overflow-hidden">
       {/* Background image with lighter overlay */}
@@ -22,9 +28,9 @@ const KachSoundMedia = () => (
         <div className="w-48 h-48 rounded-full bg-white border-4 border-brand-red flex items-center justify-center mx-auto mb-2 overflow-hidden">
           <img src={KachSoundLogo} alt="Kach Sound Media" className="w-40 h-40 object-contain" />
         </div>
-        <h1 className="text-6xl md:text-7xl font-extrabold text-foreground mb-2">Kach Sound Media</h1>
+        <h1 className="text-6xl md:text-7xl font-extrabold text-white mb-2">Kach Sound Media</h1>
         <span className="text-brand-red font-bold text-2xl mb-4 block">Sound that Moves, Beats that Inspire.</span>
-        <p className="text-xl md:text-2xl text-foreground max-w-4xl mx-auto mb-0 leading-relaxed">
+        <p className="text-xl md:text-2xl text-white max-w-4xl mx-auto mb-0 leading-relaxed">
           Entertainment heartbeat of K-GROUP KENYA, specializing in music production, DJ services, live sound setups, and event performances.
         </p>
       </div>

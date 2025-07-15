@@ -42,7 +42,7 @@ K-GROUP KENYA brings together diverse ventures under one brand, each operating a
 ## 📁 Project Structure
 
 ```
-DJ KACH/
+K-GROUP KENYA/
   backend/           # Node.js/Express backend (API, uploads, MySQL)
   src/               # Frontend source (React, pages, components)
   public/            # Static assets (logos, favicon, _redirects)

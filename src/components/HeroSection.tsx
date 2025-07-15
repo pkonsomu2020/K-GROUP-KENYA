@@ -7,11 +7,11 @@ const heroSlides = [
     image: "/djkach-1.jpg",
     headline: (
       <>
-        <span className="text-divine">DJ</span> <span className="text-red">KACH</span>
+        <span className="text-divine">K-GROUP</span> <span className="text-red">KENYA</span>
       </>
     ),
-    subheading: "Gospel DJ & Music Minister",
-    tagline: "Spreading the Gospel through divine beats and heavenly mixes. Experience worship like never before with professional DJ services that touch hearts and move souls.",
+    subheading: "Gospel Music & Ministry Brand",
+    tagline: "Spreading the Gospel through divine beats and heavenly mixes. Experience worship like never before with professional music services that touch hearts and move souls.",
     ctas: [
       { label: "Listen to Mixes", icon: Play, variant: "divine" },
       { label: "Book Event", icon: Calendar, variant: "red" },
@@ -32,7 +32,7 @@ const heroSlides = [
       </>
     ),
     subheading: "Uplifting Gospel Experiences",
-    tagline: "Join the movement of praise and worship with exclusive gospel mixes and live DJ events.",
+    tagline: "Join the movement of praise and worship with exclusive gospel mixes and live events.",
     ctas: [
       { label: "See Events", icon: Calendar, variant: "divine" },
       { label: "Watch Videos", icon: Play, variant: "red" },
@@ -48,11 +48,11 @@ const heroSlides = [
     image: "/djkach-3.jpg",
     headline: (
       <>
-        <span className="text-divine">Book</span> <span className="text-red">DJ KACH</span>
+        <span className="text-divine">Book</span> <span className="text-red">K-GROUP KENYA</span>
       </>
     ),
     subheading: "For Your Next Event",
-    tagline: "Make your event unforgettable with professional gospel DJ services, live mixing, and spirit-filled music.",
+    tagline: "Make your event unforgettable with professional gospel music services, live mixing, and spirit-filled music.",
     ctas: [
       { label: "Book Now", icon: Calendar, variant: "divine" },
       { label: "Contact", icon: Users, variant: "red" },
@@ -60,7 +60,7 @@ const heroSlides = [
     stats: [
       { value: "24/7", label: "Availability", color: "text-divine" },
       { value: "100%", label: "Satisfaction", color: "text-red" },
-      { value: "Top", label: "Gospel DJ", color: "text-primary" },
+      { value: "Top", label: "Gospel Brand", color: "text-primary" },
     ],
     socialProof: ["WEDDINGS", "CONFERENCES", "CHURCHES"]
   },

@@ -34,6 +34,7 @@ const Navigation = () => {
   const navItems = [
     { name: "Home", href: "/", icon: Home },
     { name: "About", href: "/about", icon: null },
+    { name: "Team", href: "/team", icon: null },
     {
       name: "Subsidiaries",
       dropdown: true,

@@ -3,27 +3,34 @@ import Footer from "@/components/Footer";
 import KBRRadioLogo from "/COMPANY LOGOS/KBRRADIO.jpg";
 import heroImg from "/COMPANY LOGOS/KBRRADIO.jpg";
 import Banner from "@/components/Banner";
+import { ThemeProvider } from "@/components/ThemeProvider";
 
 const galleryImages = [
-  heroImg,
-  // Add more images as needed
+  "/GALLERY/kbr radio/kbrradio 1.jpg",
+  "/GALLERY/kbr radio/kbrradio 2.jpg",
+  "/GALLERY/kbr radio/kbrradio 3.jpg",
+  "/GALLERY/kbr radio/kbrradio 4.jpg",
+  "/GALLERY/kbr radio/kbrradio 5.jpg",
+  "/GALLERY/kbr radio/kbrradio 6.jpg"
 ];
 
 const KBRRadio = () => (
   <div className="min-h-screen bg-background pt-16">
-    <Navigation />
+    <ThemeProvider>
+      <Navigation />
+    </ThemeProvider>
     {/* Hero Banner */}
     <section className="relative flex flex-col items-center justify-center text-center px-4 pt-8 pb-12 bg-brand-black overflow-hidden">
       <img src="/src/assets/dj-kach-hero.jpg" alt="Banner Background" className="absolute inset-0 w-full h-full object-cover opacity-30 z-0" />
       <div className="absolute inset-0 bg-black/40 z-0" />
       <div className="relative z-10 flex flex-col items-center w-full">
-        <div className="w-48 h-48 rounded-full bg-white border-4 border-brand-red flex items-center justify-center mx-auto mb-2 overflow-hidden">
-          <img src={KBRRadioLogo} alt="KBR Radio" className="w-40 h-40 object-contain" />
+        <div className="relative w-40 h-40 rounded-full bg-white flex items-center justify-center shadow-lg border-4 border-brand-red -mt-16 mb-4 overflow-hidden">
+          <img src={KBRRadioLogo} alt="KBR Radio Logo" className="object-cover w-full h-full" />
         </div>
-        <h1 className="text-6xl md:text-7xl font-extrabold text-foreground mb-2">KBR Radio</h1>
+        <h1 className="text-6xl md:text-7xl font-extrabold text-white mb-2">KBR Radio</h1>
         <span className="text-brand-red font-bold text-2xl mb-4 block">Voices that Resonate.</span>
-        <p className="text-xl md:text-2xl text-foreground max-w-4xl mx-auto mb-0 leading-relaxed">
-          Community-first digital and FM station of K-GROUP KENYA, giving a voice to the voiceless with gospel, talk shows, live DJ sets, and local news.
+        <p className="text-xl md:text-2xl text-white max-w-4xl mx-auto mb-0 leading-relaxed">
+          KBR Radio amplifies voices and stories that matter. Tune in for diverse programming, music, and conversations that inspire, inform, and entertain.
         </p>
       </div>
     </section>
@@ -32,11 +39,11 @@ const KBRRadio = () => (
     <section className="py-16 px-4 bg-white">
       <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-12 items-center">
         <div>
-          <h2 className="brand-section-title">About Us</h2>
-          <p className="text-foreground mb-4 text-lg">
-            KBR Radio is dedicated to interactive, community-driven programming. We promote local artists, changemakers, and build cohesion through media.
+          <h2 className="text-3xl font-bold uppercase mb-4 text-brand-red">About Us</h2>
+          <p className="text-black mb-4 text-lg text-left">
+            KBR Radio is the community-first digital and FM station of K-GROUP KENYA, giving a voice to the voiceless with gospel, talk shows, live DJ sets, and local news. We promote local artists, changemakers, and build cohesion through media.
           </p>
-          <ul className="list-disc list-inside text-foreground mb-4">
+          <ul className="list-disc list-inside text-black text-left">
             <li>Gospel & Spiritual Shows</li>
             <li>Youth Talk Shows & Podcasts</li>
             <li>Live DJ Sets & Interviews</li>

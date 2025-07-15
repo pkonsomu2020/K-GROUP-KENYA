@@ -4,6 +4,7 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import Banner from "@/components/Banner";
 import { Link } from "react-router-dom";
+import { ThemeProvider } from "@/components/ThemeProvider";
 
 const NotFound = () => {
   const location = useLocation();
@@ -17,7 +18,9 @@ const NotFound = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      <Navigation />
+      <ThemeProvider>
+        <Navigation />
+      </ThemeProvider>
       <Banner title="404 - Page Not Found" subtitle="Oops! The page you are looking for does not exist. Please check the URL or return to the homepage." />
       <div className="flex items-center justify-center py-16">
         <div className="text-center">

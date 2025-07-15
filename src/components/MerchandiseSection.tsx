@@ -7,7 +7,7 @@ const MerchandiseSection = () => {
   const products = [
     {
       id: 1,
-      name: "DJ Kach Gospel Hoodie",
+      name: "K-GROUP KENYA Gospel Hoodie",
       price: 2500,
       originalPrice: 3000,
       category: "Apparel",
@@ -15,7 +15,7 @@ const MerchandiseSection = () => {
       reviews: 45,
       inStock: true,
       image: "🎧",
-      description: "Premium quality hoodie with DJ Kach logo and gospel-inspired design",
+      description: "Premium quality hoodie with K-GROUP KENYA logo and gospel-inspired design",
       colors: ["Black", "Navy", "Purple"]
     },
     {
@@ -28,7 +28,7 @@ const MerchandiseSection = () => {
       reviews: 78,
       inStock: true,
       image: "💿",
-      description: "Complete collection of DJ Kach's best gospel mixes on premium USB drive",
+      description: "Complete collection of K-GROUP KENYA's best gospel mixes on premium USB drive",
       colors: ["Silver", "Gold"]
     },
     {
@@ -46,7 +46,7 @@ const MerchandiseSection = () => {
     },
     {
       id: 4,
-      name: "DJ Kach Branded Cap",
+      name: "K-GROUP KENYA Branded Cap",
       price: 800,
       originalPrice: null,
       category: "Accessories",
@@ -54,7 +54,7 @@ const MerchandiseSection = () => {
       reviews: 56,
       inStock: true,
       image: "🧢",
-      description: "Adjustable cap with embroidered DJ Kach logo",
+      description: "Adjustable cap with embroidered K-GROUP KENYA logo",
       colors: ["Black", "White", "Red"]
     },
     {
@@ -80,7 +80,7 @@ const MerchandiseSection = () => {
       reviews: 67,
       inStock: true,
       image: "☕",
-      description: "Set of 2 ceramic mugs with gospel quotes and DJ Kach branding",
+      description: "Set of 2 ceramic mugs with gospel quotes and K-GROUP KENYA branding",
       colors: ["White", "Blue"]
     }
   ]
@@ -101,7 +101,7 @@ const MerchandiseSection = () => {
             Official <span className="text-divine">Merchandise</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
-            Represent your faith and support DJ Kach's ministry with our exclusive collection 
+            Represent your faith and support K-GROUP KENYA's ministry with our exclusive collection 
             of high-quality gospel-inspired merchandise.
           </p>
 
@@ -222,7 +222,7 @@ const MerchandiseSection = () => {
             <CardContent className="p-8">
               <h3 className="text-2xl font-bold mb-4 text-divine">Support the Ministry</h3>
               <p className="text-muted-foreground mb-6">
-                Every purchase helps support DJ Kach's gospel ministry and enables us to reach 
+                Every purchase helps support K-GROUP KENYA's gospel ministry and enables us to reach 
                 more communities with the message of faith, hope, and love through music.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">

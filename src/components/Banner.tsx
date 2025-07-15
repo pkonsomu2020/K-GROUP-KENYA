@@ -26,7 +26,7 @@ const Banner: React.FC<BannerProps> = ({ title, subtitle }) => {
           {title}
         </h1>
         {subtitle && (
-          <p className="text-xl text-white max-w-3xl mx-auto drop-shadow">
+          <p className="text-xl text-brand-red max-w-3xl mx-auto drop-shadow">
             {subtitle}
           </p>
         )}

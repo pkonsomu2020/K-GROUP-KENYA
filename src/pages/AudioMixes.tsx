@@ -6,6 +6,7 @@ import { Download, Play, Pause, Clock, Users, Share2, Facebook, Twitter, Message
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import Banner from "@/components/Banner";
+import { ThemeProvider } from "@/components/ThemeProvider";
 
 const API_URL = "http://localhost:4000";
 
@@ -102,8 +103,10 @@ const AudioMixes = () => {
   }
 
   return (
-    <div className="min-h-screen bg-background">
-      <Navigation />
+    <div className="min-h-screen bg-background pt-16">
+      <ThemeProvider>
+        <Navigation />
+      </ThemeProvider>
       <div className="pt-0">
         {/* Year Filter Tabs */}
         <section className="py-4 border-b">

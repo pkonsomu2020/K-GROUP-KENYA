@@ -5,6 +5,7 @@ import { Music, Mic, Users, Settings, Calendar, Heart } from "lucide-react"
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import Banner from "@/components/Banner";
+import { ThemeProvider } from "@/components/ThemeProvider";
 
 const Services = () => {
   const services = [
@@ -76,7 +77,9 @@ const Services = () => {
   // Update 'Ready to Book Your Event?' section
   return (
     <div className="min-h-screen bg-background">
-      <Navigation />
+      <ThemeProvider>
+        <Navigation />
+      </ThemeProvider>
       <div className="pt-0">
         {/* Services Grid */}
         <section className="py-20">

@@ -5,6 +5,7 @@ import Banner from "@/components/Banner";
 import { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import { ThemeProvider } from "@/components/ThemeProvider";
 
 const About = () => {
   useEffect(() => {
@@ -13,7 +14,9 @@ const About = () => {
 
   return (
     <div className="min-h-screen bg-background text-foreground">
-      <Navigation />
+      <ThemeProvider>
+        <Navigation />
+      </ThemeProvider>
       <main>
         <AboutSection />
         {/* Company Story */}

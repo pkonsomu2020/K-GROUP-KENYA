@@ -12,19 +12,19 @@ const ContactSection = () => {
     {
       icon: Phone,
       title: "Phone",
-      details: ["+254 700 123 456", "+254 722 987 654"],
+      details: ["0772 082000"],
       description: "Call or WhatsApp for immediate response"
     },
     {
       icon: Mail,
       title: "Email",
-      details: ["bookings@djkach.com", "info@djkach.com"],
+      details: ["kachsoundmedia@gmail.com"],
       description: "Professional inquiries and bookings"
     },
     {
       icon: MapPin,
       title: "Location", 
-      details: ["Nairobi, Kenya", "Serving East Africa"],
+      details: ["Dolfine Plaza, Magadi Rd, Ongata Rongai"],
       description: "Available for events nationwide"
     },
     {
@@ -36,10 +36,10 @@ const ContactSection = () => {
   ]
 
   const socialPlatforms = [
-    { name: "Facebook", icon: Facebook, handle: "@djkachofficial", color: "text-blue-600" },
-    { name: "Instagram", icon: Instagram, handle: "@djkach", color: "text-pink-600" },
-    { name: "YouTube", icon: Youtube, handle: "DJ Kach Gospel", color: "text-red-600" },
-    { name: "WhatsApp", icon: MessageCircle, handle: "+254 700 123 456", color: "text-green-600" }
+    { name: "Facebook", icon: Facebook, handle: "@kachsoundntertainment", color: "text-blue-600", url: "https://www.facebook.com/kachsoundntertainment/" },
+    { name: "Instagram", icon: Instagram, handle: "@kachsoundmedia", color: "text-pink-600", url: "https://www.instagram.com/kachsoundmedia/" },
+    { name: "YouTube", icon: Youtube, handle: "@kachsoundmedia4437", color: "text-red-600", url: "https://www.youtube.com/@kachsoundmedia4437" },
+    { name: "WhatsApp", icon: MessageCircle, handle: "+254 772 082000", color: "text-green-600", url: "https://wa.me/254772082000" }
   ]
 
   const eventTypes = [
@@ -106,7 +106,7 @@ const ContactSection = () => {
             Get In <span className="text-divine">Touch</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Ready to book DJ Kach for your next event? Have questions about our services? 
+            Ready to book K-GROUP KENYA for your next event? Have questions about our services? 
             We'd love to hear from you and help create an unforgettable experience.
           </p>
         </div>
@@ -146,7 +146,9 @@ const ContactSection = () => {
                   return (
                     <a
                       key={index}
-                      href="#"
+                      href={platform.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className="flex items-center space-x-3 p-3 rounded-lg hover:bg-background transition-colors group"
                     >
                       <Icon className={`w-5 h-5 ${platform.color} group-hover:scale-110 transition-transform`} />
@@ -178,7 +180,7 @@ const ContactSection = () => {
           <div className="lg:col-span-2">
             <Card className="card-divine">
               <CardHeader>
-                <CardTitle className="text-2xl text-divine">Book DJ Kach</CardTitle>
+                <CardTitle className="text-2xl text-divine">Book K-GROUP KENYA</CardTitle>
                 <p className="text-muted-foreground">
                   Fill out this form and we'll get back to you with a customized quote for your event.
                 </p>

@@ -7,6 +7,7 @@ import Footer from "@/components/Footer";
 import Banner from "@/components/Banner";
 import { useState } from "react"
 import { useEffect } from "react"
+import { ThemeProvider } from "@/components/ThemeProvider";
 
 const Gallery = () => {
   const galleryItems = [
@@ -142,8 +143,10 @@ const Gallery = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      <Banner title="Gallery" subtitle="Explore event photos, behind-the-scenes moments, and more from DJ KACH and K-GROUP KENYA." />
-      <Navigation />
+      <Banner title="Gallery" subtitle="Explore event photos, behind-the-scenes moments, and more from K-GROUP KENYA." />
+      <ThemeProvider>
+        <Navigation />
+      </ThemeProvider>
       <div className="pt-0">
         {/* Filters */}
         <section className="py-4 border-b">

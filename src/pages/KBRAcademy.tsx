@@ -3,27 +3,34 @@ import Footer from "@/components/Footer";
 import KBRAcademyLogo from "/COMPANY LOGOS/KBRACADEMY.jpg";
 import heroImg from "/COMPANY LOGOS/KBRACADEMY.jpg";
 import Banner from "@/components/Banner";
+import { ThemeProvider } from "@/components/ThemeProvider";
 
 const galleryImages = [
-  heroImg,
-  // Add more images as needed
+  "/GALLERY/kbr academy/academy 1.jpg",
+  "/GALLERY/kbr academy/academy 2.jpg",
+  "/GALLERY/kbr academy/academy 3.jpg",
+  "/GALLERY/kbr academy/academy 4.jpg",
+  "/GALLERY/kbr academy/academy 5.jpg",
+  "/GALLERY/kbr academy/academy 6.jpg"
 ];
 
 const KBRAcademy = () => (
   <div className="min-h-screen bg-background pt-16">
-    <Navigation />
+    <ThemeProvider>
+      <Navigation />
+    </ThemeProvider>
     {/* Hero Banner */}
     <section className="relative flex flex-col items-center justify-center text-center px-4 pt-8 pb-12 bg-brand-black overflow-hidden">
       <img src="/src/assets/dj-kach-hero.jpg" alt="Banner Background" className="absolute inset-0 w-full h-full object-cover opacity-30 z-0" />
       <div className="absolute inset-0 bg-black/40 z-0" />
       <div className="relative z-10 flex flex-col items-center w-full">
-        <div className="w-48 h-48 rounded-full bg-white border-4 border-brand-red flex items-center justify-center mx-auto mb-2 overflow-hidden">
-          <img src={KBRAcademyLogo} alt="KBR Academy" className="w-40 h-40 object-contain" />
+        <div className="relative w-40 h-40 rounded-full bg-white flex items-center justify-center shadow-lg border-4 border-brand-red -mt-16 mb-4 overflow-hidden">
+          <img src={KBRAcademyLogo} alt="KBR Academy Logo" className="object-cover w-full h-full" />
         </div>
-        <h1 className="text-6xl md:text-7xl font-extrabold text-foreground mb-2">KBR Academy</h1>
+        <h1 className="text-6xl md:text-7xl font-extrabold text-white mb-2">KBR Academy</h1>
         <span className="text-brand-red font-bold text-2xl mb-4 block">From Talent to Profession.</span>
-        <p className="text-xl md:text-2xl text-foreground max-w-4xl mx-auto mb-0 leading-relaxed">
-          Training and skills development arm of K-GROUP KENYA, nurturing future professionals in media, radio, TV, entertainment, and digital communication.
+        <p className="text-xl md:text-2xl text-white max-w-4xl mx-auto mb-0 leading-relaxed">
+          KBR Academy transforms raw talent into professional excellence. Our programs empower individuals to achieve their creative and career aspirations through hands-on learning and mentorship.
         </p>
       </div>
     </section>
@@ -32,11 +39,11 @@ const KBRAcademy = () => (
     <section className="py-16 px-4 bg-white">
       <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-12 items-center">
         <div>
-          <h2 className="brand-section-title">About Us</h2>
-          <p className="text-brand-black mb-4 text-lg">
-            KBR Academy offers hands-on training, industry-experienced trainers, and certification with internship opportunities at KBR TV/Radio.
+          <h2 className="text-3xl font-bold uppercase mb-4 text-brand-red">About Us</h2>
+          <p className="text-black mb-4 text-lg text-left">
+            KBR Academy is the training and skills development arm of K-GROUP KENYA, nurturing future professionals in media, radio, TV, entertainment, and digital communication. We offer hands-on training, industry-experienced trainers, and certification with internship opportunities at KBR TV/Radio.
           </p>
-          <ul className="list-disc list-inside text-brand-black mb-4">
+          <ul className="list-disc list-inside text-black text-left">
             <li>Radio Presenting & Journalism</li>
             <li>Music Production & DJ Mastery</li>
             <li>Videography & Editing</li>

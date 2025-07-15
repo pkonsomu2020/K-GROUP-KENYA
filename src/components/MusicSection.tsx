@@ -196,7 +196,7 @@ const MusicSection = () => {
             <CardContent className="p-8">
               <h3 className="text-2xl font-bold mb-4 text-divine">Stream on Your Favorite Platform</h3>
               <p className="text-muted-foreground mb-8">
-                Find DJ Kach's gospel mixes on all major streaming platforms and social media channels.
+                Find K-GROUP KENYA's gospel mixes on all major streaming platforms and social media channels.
               </p>
               
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
