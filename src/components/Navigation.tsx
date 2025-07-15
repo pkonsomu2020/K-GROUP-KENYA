@@ -57,12 +57,12 @@ const Navigation = () => {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <div className="flex items-center space-x-2">
-            <div className="w-10 h-10 bg-secondary rounded-lg flex items-center justify-center">
+            <div className="w-10 h-10 rounded-lg flex items-center justify-center" style={{background: '#ef0b0d'}}>
               <Music className="w-6 h-6 text-primary-foreground" />
             </div>
             <div>
               <h1 className="text-xl font-bold text-primary">K-GROUP KENYA</h1>
-              <p className="text-xs text-secondary">Empowering Industries</p>
+              <p className="text-xs mb-0" style={{color: '#ef0b0d'}}>Empowering Industries</p>
             </div>
           </div>
 
@@ -95,7 +95,8 @@ const Navigation = () => {
                 <a
                   key={item.name}
                   href={item.href}
-                  className={`px-4 py-2 text-sm font-bold rounded-lg flex items-center transition-colors ${isActive ? 'bg-secondary text-secondary-foreground' : 'text-primary hover:text-secondary hover:bg-secondary/10'}`}
+                  className={`px-4 py-2 text-sm font-bold rounded-lg flex items-center transition-colors ${isActive ? '' : 'text-primary hover:text-[#ef0b0d] hover:bg-[#ef0b0d] hover:bg-opacity-10'}`}
+                  style={isActive ? { background: '#ef0b0d', color: '#fff' } : {}}
                 >
                   {item.name}
                 </a>
@@ -153,7 +154,8 @@ const Navigation = () => {
                 <a
                   key={item.name}
                   href={item.href}
-                  className={`flex items-center space-x-3 px-4 py-3 text-sm font-medium text-primary hover:text-secondary transition-colors rounded-lg ${isActive ? 'bg-secondary/80 text-secondary-foreground font-semibold' : 'hover:bg-secondary/10'}`}
+                  className={`flex items-center space-x-3 px-4 py-3 text-sm font-medium rounded-lg transition-colors ${isActive ? '' : 'text-primary hover:text-[#ef0b0d] hover:bg-[#ef0b0d] hover:bg-opacity-10'}`}
+                  style={isActive ? { background: '#ef0b0d', color: '#fff', fontWeight: 600 } : {}}
                   onClick={() => setIsMenuOpen(false)}
                 >
                   {Icon && <Icon className="w-4 h-4" />}

@@ -104,7 +104,7 @@ const Home = () => {
         <div className="relative z-10 w-full flex flex-col items-center justify-center">
           <img src={KGroupLogo} alt="K-GROUP KENYA" className="w-32 h-32 rounded-full mx-auto mb-6 shadow-lg border-4 border-brand-red bg-background object-contain" data-aos="zoom-in" />
           <h1 className="text-5xl md:text-7xl font-bold text-white mb-4" data-aos="fade-up" data-aos-delay="100">K-GROUP KENYA</h1>
-          <h2 className="text-2xl md:text-3xl font-semibold text-brand-red mb-6" data-aos="fade-up" data-aos-delay="200">Empowering Industries. Nurturing Creativity. Driving Innovation.</h2>
+          <h2 className="text-2xl md:text-3xl font-semibold mb-6" style={{color: '#ef0b0d'}} data-aos="fade-up" data-aos-delay="200">Empowering Industries. Nurturing Creativity. Driving Innovation.</h2>
           <p className="text-lg md:text-xl text-white max-w-2xl mx-auto mb-8" data-aos="fade-up" data-aos-delay="300">
             K-GROUP KENYA unites diverse industries—including media, automotive, events, education, and broadcasting—under one brand, fostering innovation, quality, and impact across all its independent ventures.
           </p>

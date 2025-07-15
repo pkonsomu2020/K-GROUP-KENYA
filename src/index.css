@@ -78,7 +78,7 @@ All colors MUST be HSL.
 @layer components {
   .brand-section-title {
     @apply text-brand-red uppercase font-bold text-3xl mb-4 tracking-wide;
-    border-bottom: 3px solid #700401;
+    border-bottom: 3px solid #ef0b0d;
     display: inline-block;
     padding-bottom: 0.25em;
     margin-bottom: 1.5em;

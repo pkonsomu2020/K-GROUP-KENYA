@@ -45,7 +45,7 @@ const App = () => {
             <div className="animate-spin rounded-full h-20 w-20 border-t-4 border-b-4 border-primary flex items-center justify-center">
               <span className="text-4xl">🎧</span>
             </div>
-            <div className="mt-4 text-lg font-bold text-secondary animate-pulse">Loading K-GROUP KENYA...</div>
+            <div className="mt-4 text-lg font-bold animate-pulse" style={{color: '#ef0b0d'}}>Loading K-GROUP KENYA...</div>
           </div>
         </div>
       )}

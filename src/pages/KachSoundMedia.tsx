@@ -77,16 +77,7 @@ const KachSoundMedia = () => (
         <h2 className="text-3xl font-bold mb-4">Book Us For Your Next Event</h2>
         <p className="mb-6 text-lg">Let us bring the sound and energy to your event. Contact us for bookings, collaborations, or more information.</p>
         <div className="flex flex-col items-center gap-4">
-          <div className="flex flex-col md:flex-row gap-4 justify-center items-center">
-            <a href="tel:0202113473" className="bg-white text-brand-red font-bold px-6 py-3 rounded-lg shadow hover:bg-gray-100 transition flex items-center gap-2">
-              <Phone className="w-5 h-5 text-brand-red" />
-              020-2113473
-            </a>
-            <a href="tel:0772082000" className="bg-white text-brand-red font-bold px-6 py-3 rounded-lg shadow hover:bg-gray-100 transition flex items-center gap-2">
-              <Smartphone className="w-5 h-5 text-brand-red" />
-              0772082000
-            </a>
-          </div>
+          {/* Removed phone call-to-action buttons */}
           <div className="flex gap-4 justify-center mt-2">
             <a href="#" target="_blank" rel="noopener noreferrer" className="text-white hover:text-gray-200"><Facebook className="w-8 h-8" /></a>
             <a href="#" target="_blank" rel="noopener noreferrer" className="text-white hover:text-gray-200"><Instagram className="w-8 h-8" /></a>
