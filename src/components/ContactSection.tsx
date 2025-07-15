@@ -12,7 +12,7 @@ const ContactSection = () => {
     {
       icon: Phone,
       title: "Phone",
-      details: ["0772 082000"],
+      details: ["020-2113473", "0768550331"],
       description: "Call or WhatsApp for immediate response"
     },
     {
