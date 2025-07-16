@@ -37,7 +37,7 @@ const values = [
     title: "Excellence",
     desc: "We pursue the highest standards in all we do.",
     verse: "Colossians 3:23",
-    color: "text-[#ef0b0d]"
+    color: "text-red-500"
   },
   {
     icon: Users,
@@ -86,13 +86,13 @@ const AboutSection = () => {
         <div className="absolute inset-0 bg-black/40" />
         <div className="relative z-10 text-center">
           <h1 className="text-5xl md:text-6xl font-bold text-white mb-4 drop-shadow-lg" data-aos="zoom-in">About Us</h1>
-          <p className="text-xl md:text-2xl max-w-2xl mx-auto drop-shadow text-white" data-aos="fade-up" data-aos-delay="100">Empowering Industries. Nurturing Creativity. Driving Innovation.</p>
+          <p className="text-xl md:text-2xl text-white max-w-2xl mx-auto drop-shadow" data-aos="fade-up" data-aos-delay="100">Empowering Industries. Nurturing Creativity. Driving Innovation.</p>
         </div>
       </div>
 
       {/* Timeline */}
       <div className="max-w-5xl mx-auto px-4 py-12">
-        <h2 className="text-3xl font-bold text-center mb-10" style={{color: '#ef0b0d'}} data-aos="fade-up">Our Journey</h2>
+        <h2 className="text-3xl font-bold text-center mb-10 text-primary" data-aos="fade-up">Our Journey</h2>
         <div className="flex flex-col md:flex-row gap-8 justify-center items-center">
           {timeline.map((item, idx) => (
             <div
@@ -102,7 +102,7 @@ const AboutSection = () => {
               data-aos-delay={idx * 100}
             >
               <img src={item.image} alt={item.title} className="w-28 h-28 rounded-xl shadow-lg mb-4 object-cover border-4 border-divine" data-aos="zoom-in" data-aos-delay={100 + idx * 100} />
-              <h3 className="text-xl font-semibold" style={{color: '#ef0b0d'}}>{item.year}</h3>
+              <h3 className="text-xl font-semibold text-divine">{item.year}</h3>
               <h4 className="font-bold text-foreground mb-1">{item.title}</h4>
               <p className="text-muted-foreground text-sm mb-2">{item.description}</p>
               {idx < timeline.length - 1 && (
