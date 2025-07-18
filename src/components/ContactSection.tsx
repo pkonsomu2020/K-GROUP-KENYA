@@ -54,8 +54,7 @@ const ContactSection = () => {
   ]
 
   const [form, setForm] = useState({
-    firstName: '', lastName: '', email: '', phone: '',
-    eventType: '', eventDate: '', venue: '', guests: '', budget: '', message: ''
+    firstName: '', lastName: '', email: '', phone: '', company: '', message: ''
   });
   const [submitting, setSubmitting] = useState(false);
   const [success, setSuccess] = useState('');
@@ -70,23 +69,32 @@ const ContactSection = () => {
     setForm(f => ({ ...f, [name]: value }));
   };
 
+  const API_BASE = import.meta.env.VITE_API_BASE || "http://localhost:4000";
   const handleSubmit = async e => {
     e.preventDefault();
     setSubmitting(true);
     setSuccess('');
     setError('');
+    // Map fields for /api/bookings
+    const bookingPayload = {
+      firstName: form.firstName,
+      lastName: form.lastName,
+      email: form.email,
+      phone: form.phone,
+      companyEnquire: form.company,
+      additionalDetails: form.message
+    };
     try {
-      const res = await fetch('http://localhost:4000/api/contact', {
+      const res = await fetch(`${API_BASE}/api/bookings`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(form)
+        body: JSON.stringify(bookingPayload)
       });
       const data = await res.json();
       if (data.success) {
         setSuccess('Your message has been sent!');
         setForm({
-          firstName: '', lastName: '', email: '', phone: '',
-          eventType: '', eventDate: '', venue: '', guests: '', budget: '', message: ''
+          firstName: '', lastName: '', email: '', phone: '', company: '', message: ''
         });
       } else {
         setError(data.error || 'Something went wrong.');
@@ -211,7 +219,6 @@ const ContactSection = () => {
                       />
                     </div>
                   </div>
-
                   <div className="grid md:grid-cols-2 gap-4">
                     <div className="space-y-2">
                       <Label htmlFor="email">Email Address *</Label>
@@ -238,84 +245,20 @@ const ContactSection = () => {
                       />
                     </div>
                   </div>
-
-                  <div className="grid md:grid-cols-2 gap-4">
-                    <div className="space-y-2">
-                      <Label htmlFor="eventType">Event Type *</Label>
-                      <Select 
-                        onValueChange={(value) => handleSelect('eventType', value)}
-                        value={form.eventType}
-                      >
-                        <SelectTrigger>
-                          <SelectValue placeholder="Select event type" />
-                        </SelectTrigger>
-                        <SelectContent>
-                          {eventTypes.map((type) => (
-                            <SelectItem key={type} value={type.toLowerCase().replace(/\s+/g, '-')}>
-                              {type}
-                            </SelectItem>
-                          ))}
-                        </SelectContent>
-                      </Select>
-                    </div>
-                    <div className="space-y-2">
-                      <Label htmlFor="eventDate">Event Date *</Label>
-                      <Input 
-                        id="eventDate" 
-                        name="eventDate" 
-                        type="date" 
-                        value={form.eventDate} 
-                        onChange={handleChange} 
-                        required 
-                      />
-                    </div>
+                  <div className="mb-4">
+                    <Label htmlFor="company">Company Enquire *</Label>
+                    <select id="company" name="company" value={form.company} onChange={handleChange} required className="w-full px-4 py-2 rounded border border-gray-300 text-black">
+                      <option value="">Select one of the companies</option>
+                      <option value="kach-sound-media">Kach Sound Media</option>
+                      <option value="links-auto-motors">Links Auto Motors</option>
+                      <option value="breakout-events">Breakout Events</option>
+                      <option value="kbr-tv">KBR TV</option>
+                      <option value="kbr-radio">KBR Radio</option>
+                      <option value="breakout-bible-fellowship">Breakout Bible Fellowship</option>
+                      <option value="kbr-academy">KBR Academy</option>
+                    </select>
                   </div>
-
-                  <div className="grid md:grid-cols-2 gap-4">
-                    <div className="space-y-2">
-                      <Label htmlFor="venue">Venue/Location *</Label>
-                      <Input 
-                        id="venue" 
-                        name="venue" 
-                        value={form.venue} 
-                        onChange={handleChange} 
-                        placeholder="Event venue or location" 
-                        required 
-                      />
-                    </div>
-                    <div className="space-y-2">
-                      <Label htmlFor="guests">Expected Guests</Label>
-                      <Input 
-                        id="guests" 
-                        name="guests" 
-                        type="number" 
-                        value={form.guests} 
-                        onChange={handleChange} 
-                        placeholder="Number of guests" 
-                      />
-                    </div>
-                  </div>
-
-                  <div className="space-y-2">
-                    <Label htmlFor="budget">Budget Range</Label>
-                    <Select 
-                      onValueChange={(value) => handleSelect('budget', value)}
-                      value={form.budget}
-                    >
-                      <SelectTrigger>
-                        <SelectValue placeholder="Select your budget range" />
-                      </SelectTrigger>
-                      <SelectContent>
-                        <SelectItem value="under-20k">Under KSh 20,000</SelectItem>
-                        <SelectItem value="20k-50k">KSh 20,000 - 50,000</SelectItem>
-                        <SelectItem value="50k-100k">KSh 50,000 - 100,000</SelectItem>
-                        <SelectItem value="over-100k">Over KSh 100,000</SelectItem>
-                        <SelectItem value="discuss">Prefer to discuss</SelectItem>
-                      </SelectContent>
-                    </Select>
-                  </div>
-
-                  <div className="space-y-2">
+                  <div className="mb-4">
                     <Label htmlFor="message">Additional Details</Label>
                     <Textarea 
                       id="message" 
@@ -326,18 +269,10 @@ const ContactSection = () => {
                       rows={4}
                     />
                   </div>
-
-                  <div className="flex flex-col sm:flex-row gap-4">
-                    <Button variant="divine" size="lg" className="flex-1" type="submit" disabled={submitting}>
-                      {submitting ? 'Sending...' : 'Send Booking Request'}
-                      <Mail className="w-5 h-5 ml-2" />
-                    </Button>
-                  </div>
-
-                  <p className="text-xs text-muted-foreground text-center">
-                    By submitting this form, you agree to our terms of service and privacy policy. 
-                    We'll only use your information to respond to your inquiry.
-                  </p>
+                  <Button variant="divine" size="lg" className="w-full" type="submit" disabled={submitting}>
+                    {submitting ? 'Sending...' : 'Send Booking Request'}
+                    <Mail className="w-5 h-5 ml-2" />
+                  </Button>
                 </form>
                 {success && (
                   <div className="mt-6 text-center text-green-600">

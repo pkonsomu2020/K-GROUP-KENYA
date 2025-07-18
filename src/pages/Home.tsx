@@ -99,6 +99,7 @@ const Home = () => {
           loop
           muted
           playsInline
+          style={{ filter: "brightness(6.5) contrast(1.2)" }}
         />
         <div className="absolute inset-0 bg-black/70" />
         <div className="relative z-10 w-full flex flex-col items-center justify-center">
@@ -115,11 +116,11 @@ const Home = () => {
       <section className="py-12 px-4 bg-background" data-aos="fade-up">
         <div className="max-w-5xl mx-auto">
           <h3 className="brand-section-title" data-aos="fade-right">Sectors We Operate In</h3>
-          <div className="flex flex-wrap justify-center gap-8">
+          <div className="w-full flex flex-row justify-between gap-4 flex-wrap md:flex-nowrap">
             {sectors.map((sector, idx) => (
-              <div key={sector.name} className="flex flex-col items-center" data-aos="zoom-in" data-aos-delay={idx * 100}>
+              <div key={sector.name} className="flex flex-col items-center flex-1 min-w-0" data-aos="zoom-in" data-aos-delay={idx * 100}>
                 <span className="text-4xl mb-2">{sector.icon}</span>
-                <span className="text-lg font-semibold text-foreground">{sector.name}</span>
+                <span className="text-lg font-semibold text-foreground text-center">{sector.name}</span>
               </div>
             ))}
           </div>

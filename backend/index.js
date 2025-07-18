@@ -5,6 +5,7 @@ import fs from 'fs';
 import path from 'path';
 import mysql from 'mysql2/promise';
 import dotenv from 'dotenv';
+import nodemailer from 'nodemailer';
 dotenv.config();
 
 const app = express();
@@ -15,7 +16,8 @@ const __dirname = path.resolve();
 app.use(cors({
   origin: [
     'https://kgroupkenya.netlify.app',
-    'http://localhost:5173' // allow local dev
+    'http://localhost:5173', // allow local dev
+    'http://localhost:8080' // allow Vite/React dev server
   ],
   credentials: true
 }));
@@ -56,6 +58,26 @@ const db = mysql.createPool({
   password: process.env.MYSQL_PASSWORD || '',
   database: process.env.MYSQL_DATABASE || 'djkach',
 });
+
+// Nodemailer transporter setup
+const transporter = nodemailer.createTransport({
+  host: process.env.SMTP_HOST || 'smtp.gmail.com',
+  port: process.env.SMTP_PORT ? parseInt(process.env.SMTP_PORT) : 465,
+  secure: true,
+  auth: {
+    user: process.env.SMTP_USER,
+    pass: process.env.SMTP_PASS,
+  },
+});
+
+async function sendNotificationEmail(subject, html) {
+  await transporter.sendMail({
+    from: process.env.SMTP_USER,
+    to: 'kgroupkenya@gmail.com',
+    subject,
+    html,
+  });
+}
 
 // Upload endpoint
 app.post('/api/mixes/upload', upload.single('file'), (req, res) => {
@@ -124,11 +146,61 @@ app.post('/api/contact', async (req, res) => {
   }
   try {
     await db.query(
-      `INSERT INTO contacts (firstName, lastName, email, phone, eventType, eventDate, venue, guests, budget, message)
+      `INSERT INTO Bookings (firstName, lastName, email, phone, eventType, eventDate, venue, guests, budget, message)
        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)` ,
       [firstName, lastName, email, phone, eventType, eventDate, venue, guests || null, budget || null, message || null]
     );
     res.json({ success: true });
+    // Send email notification in the background
+    sendNotificationEmail(
+      'New Kach Sound Media Booking',
+      `<h2>New Booking (Kach Sound Media)</h2>
+      <ul>
+        <li><b>First Name:</b> ${firstName}</li>
+        <li><b>Last Name:</b> ${lastName}</li>
+        <li><b>Email:</b> ${email}</li>
+        <li><b>Phone:</b> ${phone}</li>
+        <li><b>Event Type:</b> ${eventType}</li>
+        <li><b>Event Date:</b> ${eventDate}</li>
+        <li><b>Venue:</b> ${venue}</li>
+        <li><b>Guests:</b> ${guests || ''}</li>
+        <li><b>Budget:</b> ${budget || ''}</li>
+        <li><b>Additional Details:</b> ${message || ''}</li>
+      </ul>`
+    ).catch(err => console.error('Email send error:', err));
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
+// Booking form endpoint for subsidiary pages
+app.post('/api/bookings', async (req, res) => {
+  const {
+    firstName, lastName, email, phone, companyEnquire, additionalDetails
+  } = req.body;
+  if (!firstName || !lastName || !email || !phone || !companyEnquire) {
+    return res.status(400).json({ error: 'Missing required fields' });
+  }
+  try {
+    await db.query(
+      `INSERT INTO CompanyEnquiries (firstName, lastName, email, phone, companyEnquire, additionalDetails)
+       VALUES (?, ?, ?, ?, ?, ?)` ,
+      [firstName, lastName, email, phone, companyEnquire, additionalDetails || null]
+    );
+    res.json({ success: true });
+    // Send email notification in the background
+    sendNotificationEmail(
+      'New Company Enquiry',
+      `<h2>New Company Enquiry</h2>
+      <ul>
+        <li><b>First Name:</b> ${firstName}</li>
+        <li><b>Last Name:</b> ${lastName}</li>
+        <li><b>Email:</b> ${email}</li>
+        <li><b>Phone:</b> ${phone}</li>
+        <li><b>Company Enquire:</b> ${companyEnquire}</li>
+        <li><b>Additional Details:</b> ${additionalDetails || ''}</li>
+      </ul>`
+    ).catch(err => console.error('Email send error:', err));
   } catch (err) {
     res.status(500).json({ error: err.message });
   }
