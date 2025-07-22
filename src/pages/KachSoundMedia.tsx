@@ -4,17 +4,20 @@ import KachSoundLogo from "/COMPANY LOGOS/KACHSOUNDMEDIA.jpg";
 import heroImg from "/COMPANY LOGOS/KACHSOUNDMEDIA.jpg";
 import Banner from "@/components/Banner";
 import { ThemeProvider } from "@/components/ThemeProvider";
-import { Phone, Smartphone, Facebook, Instagram, Youtube } from "lucide-react";
+import { Phone, Smartphone, Facebook, Instagram, Youtube, Mail } from "lucide-react";
 import ContactSection from "@/components/ContactSection";
 import KachSoundMediaBookingForm from "@/components/KachSoundMediaBookingForm";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselPrevious,
+  CarouselNext
+} from "@/components/ui/carousel";
+import Autoplay from "embla-carousel-autoplay";
 
 const galleryImages = [
-  "/GALLERY/kachsound media/media 1.jpg",
-  "/GALLERY/kachsound media/media 2.jpg",
-  "/GALLERY/kachsound media/media 3.jpg",
-  "/GALLERY/kachsound media/media 4.jpg",
-  "/GALLERY/kachsound media/media 5.jpg",
-  "/GALLERY/kachsound media/media 6.jpg"
+  ...[...Array(24)].map((_, i) => `/GALLERY/kachsound media/kachsound media ${i + 6}.jpg`)
 ];
 
 const KachSoundMedia = () => (
@@ -55,8 +58,8 @@ const KachSoundMedia = () => (
           </ul>
         </div>
         <div className="flex flex-col gap-4">
-          <img src={galleryImages[0]} alt="Kach Sound Media Event" className="rounded-xl shadow-lg object-cover w-full h-64" />
-          <img src={galleryImages[1]} alt="Kach Sound Media DJ" className="rounded-xl shadow-lg object-cover w-full h-64" />
+          <img src={galleryImages[0]} alt="Kach Sound Media Event" className="rounded-xl shadow-lg object-contain max-h-[500px] mx-auto" />
+          <img src={galleryImages[1]} alt="Kach Sound Media DJ" className="rounded-xl shadow-lg object-contain max-h-[500px] mx-auto" />
         </div>
       </div>
     </section>
@@ -65,10 +68,26 @@ const KachSoundMedia = () => (
     <section className="py-16 px-4 bg-brand-black">
       <div className="max-w-5xl mx-auto">
         <h2 className="brand-section-title text-white">Gallery</h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
-          {galleryImages.map((img, idx) => (
-            <img key={idx} src={img} alt="Kach Sound Media Gallery" className="rounded-xl shadow-lg object-cover w-full h-56" />
-          ))}
+        <div className="mt-8 relative">
+          <Carousel
+            opts={{ loop: true }}
+            plugins={[Autoplay({ delay: 2500, stopOnInteraction: false })]}
+            className="w-full"
+          >
+            <CarouselContent>
+              {galleryImages.map((img, idx) => (
+                <CarouselItem key={idx} className="flex items-center justify-center">
+                  <img
+                    src={img}
+                    alt={`Kach Sound Media Gallery ${idx + 6}`}
+                    className="rounded-xl shadow-lg object-contain max-h-[500px] mx-auto"
+                  />
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+            <CarouselPrevious className="left-2 top-1/2 -translate-y-1/2 z-20" />
+            <CarouselNext className="right-2 top-1/2 -translate-y-1/2 z-20" />
+          </Carousel>
         </div>
       </div>
     </section>
@@ -90,6 +109,10 @@ const KachSoundMedia = () => (
                 0772082000
               </a>
             </div>
+            <a href="mailto:kachsoundmedia@gmail.com" className="bg-white text-brand-red font-bold px-6 py-3 rounded-lg shadow hover:bg-gray-100 transition flex items-center gap-2 mt-4 md:mt-0">
+              <Mail className="w-5 h-5 text-brand-red" />
+              kachsoundmedia@gmail.com
+            </a>
             <div className="flex gap-4 justify-center md:justify-start mt-2">
               <a href="#" target="_blank" rel="noopener noreferrer" className="text-white hover:text-gray-200"><Facebook className="w-8 h-8" /></a>
               <a href="#" target="_blank" rel="noopener noreferrer" className="text-white hover:text-gray-200"><Instagram className="w-8 h-8" /></a>

@@ -6,10 +6,18 @@ import Banner from "@/components/Banner";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import { Phone, Smartphone, Facebook, Instagram, Youtube } from "lucide-react";
 import BookingForm from "@/components/BookingForm";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselPrevious,
+  CarouselNext
+} from "@/components/ui/carousel";
+import Autoplay from "embla-carousel-autoplay";
 
 const galleryImages = [
-  heroImg,
-  // Add more images as needed
+  heroImg
+  // Add more images as needed, e.g. '/GALLERY/breakoutbible/1.jpg'
 ];
 
 const BreakoutBibleFellowship = () => (
@@ -49,7 +57,7 @@ const BreakoutBibleFellowship = () => (
           </ul>
         </div>
         <div className="flex flex-col gap-4">
-          <img src={galleryImages[0]} alt="Breakout Bible Fellowship Gallery" className="rounded-xl shadow-lg object-cover w-full h-64" />
+          <img src={galleryImages[0]} alt="Breakout Bible Fellowship Gallery" className="rounded-xl shadow-lg object-contain max-h-[500px] mx-auto" />
         </div>
       </div>
     </section>
@@ -58,10 +66,26 @@ const BreakoutBibleFellowship = () => (
     <section className="py-16 px-4 bg-brand-black">
       <div className="max-w-5xl mx-auto">
         <h2 className="brand-section-title text-white">Gallery</h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
-          {galleryImages.map((img, idx) => (
-            <img key={idx} src={img} alt="Breakout Bible Fellowship Gallery" className="rounded-xl shadow-lg object-cover w-full h-56" />
-          ))}
+        <div className="mt-8 relative">
+          <Carousel
+            opts={{ loop: true }}
+            plugins={[Autoplay({ delay: 2500, stopOnInteraction: false })]}
+            className="w-full"
+          >
+            <CarouselContent>
+              {galleryImages.map((img, idx) => (
+                <CarouselItem key={idx} className="flex items-center justify-center">
+                  <img
+                    src={img}
+                    alt={`Breakout Bible Fellowship Gallery ${idx + 1}`}
+                    className="rounded-xl shadow-lg object-contain max-h-[500px] mx-auto"
+                  />
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+            <CarouselPrevious className="left-2 top-1/2 -translate-y-1/2 z-20" />
+            <CarouselNext className="right-2 top-1/2 -translate-y-1/2 z-20" />
+          </Carousel>
         </div>
       </div>
     </section>

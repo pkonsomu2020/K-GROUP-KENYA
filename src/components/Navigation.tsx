@@ -48,6 +48,7 @@ const Navigation = () => {
         { name: "KBR Academy", href: "/kbr-academy" },
       ],
     },
+    { name: "CSR", href: "/csr", icon: null },
     { name: "Contacts", href: "/contacts", icon: Contact },
   ];
 
