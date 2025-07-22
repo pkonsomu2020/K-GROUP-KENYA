@@ -29,7 +29,7 @@ import CSR from "./pages/CSR";
 
 const queryClient = new QueryClient();
 
-const WHATSAPP_NUMBER = "254723157309"; // Updated WhatsApp number
+const WHATSAPP_NUMBER = "254768550331"; // Updated WhatsApp number
 const WHATSAPP_MESSAGE = encodeURIComponent("Hello K-GROUP KENYA! I found your website and would like to connect.");
 
 const App = () => {
